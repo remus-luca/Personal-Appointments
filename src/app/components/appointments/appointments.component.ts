@@ -17,4 +17,15 @@ export class AppointmentsComponent implements OnInit {
       .getAppointments()
       .subscribe((appointments) => (this.appointments = appointments));
   }
+
+  deleteAppointment(appointment: Appointment) {
+    this.appointmentService
+      .deleteAppointment(appointment)
+      .subscribe(
+        () =>
+          (this.appointments = this.appointments.filter(
+            (e) => e.id != appointment.id
+          ))
+      );
+  }
 }
