@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Appointment } from 'src/app';
-import { APPOINTMENTS } from 'src/app/appointments';
 import { AppointmentService } from 'src/app/services/appointment.service';
 
 @Component({
@@ -27,5 +26,9 @@ export class AppointmentsComponent implements OnInit {
             (e) => e.id != appointment.id
           ))
       );
+  }
+  toggleReminder(appointment: Appointment) {
+    appointment.reminder = !appointment.reminder;
+    this.appointmentService.updateAppointmentReminder(appointment).subscribe();
   }
 }

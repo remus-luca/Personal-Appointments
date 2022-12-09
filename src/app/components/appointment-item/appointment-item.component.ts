@@ -11,10 +11,14 @@ export class AppointmentItemComponent implements OnInit {
   @Input() appointment: Appointment;
   faTimes = faTimes;
   @Output() onDeleteAppointment: EventEmitter<Appointment> = new EventEmitter();
+  @Output() onToggleReminder: EventEmitter<Appointment> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
   onDelete(appointment) {
     this.onDeleteAppointment.emit(appointment);
+  }
+  onToggle(appointment) {
+    this.onToggleReminder.emit(appointment);
   }
 }
