@@ -12,6 +12,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     AppointmentItemComponent,
     AppointmentsComponent,
     AddAppointmentComponent,
+    AboutComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
