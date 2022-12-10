@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Appointment } from 'src/app';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-add-appointment',
@@ -12,8 +14,14 @@ export class AddAppointmentComponent implements OnInit {
   text: string;
   day: string;
   reminder: boolean = false;
+  showAddAppointment: boolean;
+  subscription: Subscription;
 
-  constructor() {}
+  constructor(private uiService: UiService) {
+    this.subscription = uiService
+      .onToggle()
+      .subscribe((value) => (this.showAddAppointment = value));
+  }
 
   ngOnInit(): void {}
 

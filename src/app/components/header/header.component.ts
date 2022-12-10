@@ -12,7 +12,11 @@ export class HeaderComponent implements OnInit {
   showAddAppointment: boolean = false;
   subscription: Subscription;
 
-  constructor(private uiService: UiService) {}
+  constructor(private uiService: UiService) {
+    this.subscription = uiService
+      .onToggle()
+      .subscribe((value) => (this.showAddAppointment = value));
+  }
 
   ngOnInit(): void {}
 
