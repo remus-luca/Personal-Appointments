@@ -28,4 +28,7 @@ export class AppointmentService {
     const url = `${this.apiUrl}/${appointment.id}`;
     return this.http.put<Appointment>(url, appointment, httpOptions);
   }
+  addAppointment(appointment: Appointment): Observable<Appointment> {
+    return this.http.post<Appointment>(this.apiUrl, appointment, httpOptions);
+  }
 }

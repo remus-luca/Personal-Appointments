@@ -31,4 +31,11 @@ export class AppointmentsComponent implements OnInit {
     appointment.reminder = !appointment.reminder;
     this.appointmentService.updateAppointmentReminder(appointment).subscribe();
   }
+  addAppointment(appointment: Appointment) {
+    this.appointmentService
+      .addAppointment(appointment)
+      .subscribe((appointment) => {
+        this.appointments.push(appointment);
+      });
+  }
 }

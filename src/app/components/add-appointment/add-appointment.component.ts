@@ -27,6 +27,7 @@ export class AddAppointmentComponent implements OnInit {
       day: this.day,
       reminder: this.reminder,
     };
+    this.onAddAppointment.emit(newAppointment);
     this.text = '';
     (this.day = ''), (this.reminder = false);
   }
