@@ -1,8 +1,8 @@
 <header>
   <h1>{{title}}</h1>
-  <app-button color="{{showAddAppointment ? 'red' : 'green'}}" text="{{showAddAppointment ? 'Close' : 'Add'}}"
+  <app-button *ngIf="hasRoute('/')" color="{{showAddAppointment ? 'red' : 'green'}}"
+    text="{{showAddAppointment ? 'Close' : 'Add'}}"
     (btnClick)="toggleAddAppointment()"></app-button>
 
 </header>
-<app-appointments>
-</app-appointments>
+
