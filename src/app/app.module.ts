@@ -10,6 +10,8 @@ import { AppointmentItemComponent } from './components/appointment-item/appointm
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AddAppointmentComponent } from './components/add-appointment/add-appointment.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +19,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ButtonComponent,
     AppointmentItemComponent,
     AppointmentsComponent,
+    AddAppointmentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

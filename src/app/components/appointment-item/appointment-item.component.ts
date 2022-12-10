@@ -18,7 +18,7 @@ export class AppointmentItemComponent implements OnInit {
   onDelete(appointment) {
     this.onDeleteAppointment.emit(appointment);
   }
-  onToggle(appointment) {
+  onToggle(appointment: Appointment) {
     this.onToggleReminder.emit(appointment);
   }
 }
